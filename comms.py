@@ -7,8 +7,7 @@ app = Flask(__name__)
 @app.route("/", methods=['POST'])
 def hello():
     data = json.loads(request.data)
-    print(data['gesture_id'])
     VirtualKeys.send_key(data['gesture_id'])
-    return "Hello World!"
+    return "Gesture complete!"
 
 app.run(host= '0.0.0.0')
