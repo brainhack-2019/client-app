@@ -1,35 +1,14 @@
-from flask import Flask
+from flask import Flask, request
 from page_objects.keys import VirtualKeys
+import json
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=['POST'])
 def hello():
+    data = json.loads(request.data)
+    print(data['gesture_id'])
+    VirtualKeys.send_key(data['gesture_id'])
     return "Hello World!"
 
-@app.route('/play', methods=['GET'])
-def play():
-    VirtualKeys.send_key('play_key')
-    return "Play!"
-
-@app.route('/prev', methods=['GET'])
-def prev():
-    VirtualKeys.send_key('prev_key')
-    return "Prev!"
-
-@app.route('/next', methods=['GET'])
-def next():
-    VirtualKeys.send_key('next_key')
-    return "Next!"
-
-@app.route('/audio_lower', methods=['GET'])
-def audio_lower():
-    VirtualKeys.send_key('audio_lower_key')
-    return "Audio lower!"
-
-@app.route('/audio_higher', methods=['GET'])
-def audio_higher():
-    VirtualKeys.send_key('audio_higher_key')
-    return "Audio higher!"
-
-app.run()
+app.run(host= '0.0.0.0')
