@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 @app.route("/", methods=['POST'])
-def hello():
+def gesture():
     data = json.loads(request.data)
     VirtualKeys.send_key(data['gesture_id'])
     return "Gesture complete!"
