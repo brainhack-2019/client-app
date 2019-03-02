@@ -5,7 +5,9 @@ name = "pypi"
 
 [packages]
 keyboard = "==0.13.2"
-
+pynput = "==1.4"
+Flask = "==1.0.2"
+requests = "==2.21.0"
 
 [dev-packages]
 
