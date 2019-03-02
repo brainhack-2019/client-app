@@ -7,7 +7,6 @@ class VirtualKeys:
     @staticmethod
     def send_key(gesture_id):
         virtual_keyboard = Controller()
-
         keys = {
             'play_key':269025044,
             'prev_key':269025046,
@@ -15,7 +14,6 @@ class VirtualKeys:
             'audio_lower_key': 0x1008FF11,
             'audio_higher_key':0x1008FF13
             }
-
         gesture_ids = {
             0:'play_key',
             1:'prev_key',
