@@ -15,11 +15,11 @@ class VirtualKeys:
             'audio_higher_key':0x1008FF13
             }
         gesture_ids = {
-            0:'play_key',
-            1:'prev_key',
-            2:'next_key',
-            3:'audio_lower_key',
-            4:'audio_higher_key'
+            1:'play_key',
+            2:'prev_key',
+            3:'next_key',
+            4:'audio_lower_key',
+            5:'audio_higher_key'
         }
         key = keys[gesture_ids[gesture_id]]
         steps = 1
