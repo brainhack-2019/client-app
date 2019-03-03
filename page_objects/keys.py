@@ -23,7 +23,7 @@ class VirtualKeys:
         }
         key = keys[gesture_ids[gesture_id]]
         steps = 1
-        if gesture_id == 3 or gesture_id == 4:
+        if gesture_id == 4 or gesture_id == 5:
             steps = 11
         for i in range(steps):
             virtual_keyboard.press(keyboard.KeyCode.from_vk(key))
